@@ -1,0 +1,9 @@
+body {
+    background: url('../img/01.png');
+    text-align: center;
+}
+
+.login_otstup{
+    padding-top: 10em;
+    margin-bottom: 2em;
+}

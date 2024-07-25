@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/img/ico-ndb.png">
+    <link rel="stylesheet" href="static/css/index_styles.css">
+    <script src="static/js/index_js.js"></script>
+    <title>Авторизация</title>
+</head>
+
+<body>
+    <div id="header">
+        <img src="static/img/logo-ndb.png"  alt="Народный Довкерительный Банк" style="width:400px; height: 80px;">
+    <!--<h1>Страница Авторизации</h1>-->
+    <hr>
+    </div>
+    
+    <!-- <fieldset> -->
+        <legend class="login_otstup">Авторизация</legend>
+        <div id="notFaund"></div>
+        <form id="aut_form" method="post">
+            <label for="login">Логин</label><br>
+            <input type="text" id="login" name="login" placeholder="Логин" autofocus autocomplete="on"><br>
+            <label for="password">Пороль</label><br>
+            <input type="password" id="password" name="password" placeholder="Пороль" required><br>
+
+            <p></p>
+            <button type="submit">Ввод</button><br>
+        </form>
+    <!-- </fieldset> -->
+    <script> authorization("aut_form")</script>
+</body>
+
+</html>
