@@ -12,12 +12,9 @@
 
 <body>
     <div id="header">
-        <img src="static/img/logo-ndb.png"  alt="Народный Довкерительный Банк" style="width:400px; height: 80px;">
-    <!--<h1>Страница Авторизации</h1>-->
-    <hr>
+        
     </div>
     
-    <!-- <fieldset> -->
         <legend class="login_otstup">Авторизация</legend>
         <div id="notFaund"></div>
         <form id="aut_form" method="post">
@@ -29,8 +26,9 @@
             <p></p>
             <button type="submit">Ввод</button><br>
         </form>
-    <!-- </fieldset> -->
+
     <script> authorization("aut_form")</script>
+    <script> fetchAndInsertHTML("templates/heder.html", "header")</script>
 </body>
 
 </html>
