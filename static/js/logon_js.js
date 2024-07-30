@@ -30,15 +30,18 @@
         }
       })
      .then(data => {
-        console.log('Ответ от API:', data);
         // Здесь можно вызвать функцию, если авторизация прошла успешно
         onSuccessAuthorization(data);
       })
      .catch(error => {
         console.error('Ошибка:', error);
-        if (error.message.includes('404')) {
+        if (error.message.includes('401')) {
           // Здесь можно вызвать функцию, если произошла ошибка 404
-          on404ErrorAuthor();
+          on401ErrorAuthor();
+        }
+        if (error.message.includes('403')) {
+          // Здесь можно вызвать функцию, если произошла ошибка 403
+          on403ErrorAuthor()
         }
       });
     });
@@ -46,20 +49,23 @@
   
   // Функция, которая будет вызвана в случае успешной авторизации
   function onSuccessAuthorization(data) {
-    console.log('Авторизация прошла успешно!');
+    console.log(data)
+    localStorage.setItem('accessJwtToken', data.access_token);
+    localStorage.setItem('refreshJwtToken', data.refresh_token);
+    window.location.href = "templates/user_index.html";
     // Здесь можно выполнить какие-либо действия после успешной авторизации
   }
   
+  function on403ErrorAuthor() {
+    const Forbiden = "<p style='color: brown;'> Ваша учётная запись заблокирована обратитесь к админестратору </p>"
+    document.getElementById("Forbiden").innerHTML = Forbiden
+    document.getElementById("notFaund").innerHTML = ''
+  }
+
   // Функция, которая будет вызвана в случае ошибки 404
-  function on404ErrorAuthor() {
-    const notFaund = "<p style='color: brown;'> Не верный логин </p>"
-    console.log('Ошибка 404: не найден ресурс авторизации');
+  function on401ErrorAuthor() {
+    const notFaund = "<p style='color: brown;'> Не верный логин или пороль </p>"
     document.getElementById("notFaund").innerHTML = notFaund
+    document.getElementById("Forbiden").innerHTML = ''
     // Здесь можно выполнить какие-либо действия в случае ошибки 404
   }
-function fetchAndInsertHTML(url, elementId) {
-  fetch(url)
-    .then(response => response.text())
-    .then(html => document.getElementById(elementId).innerHTML = html)
-    .catch(error => console.error(error));
-}

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="static/img/ico-ndb.png">
     <link rel="stylesheet" href="static/css/index_styles.css">
-    <script src="static/js/index_js.js"></script>
+    <link rel="stylesheet" href="static/css/login_styles.css">
+    <script src="static/js/logon_js.js"></script>
+    <script src="static/js/header_js.js"></script>
     <title>Авторизация</title>
 </head>
 
@@ -23,12 +25,12 @@
             <label for="password">Пороль</label><br>
             <input type="password" id="password" name="password" placeholder="Пороль" required><br>
 
-            <p></p>
+            <p id="Forbiden"></p>
             <button type="submit">Ввод</button><br>
         </form>
 
     <script> authorization("aut_form")</script>
-    <script> fetchAndInsertHTML("templates/heder.html", "header")</script>
+    <script> headertHTML("header", "static/img/logo-ndb.png")</script>
 </body>
 
 </html>
