@@ -1,0 +1,92 @@
+.user-data {
+   height: 50px;
+   background-color: #5b97de;
+   color:aliceblue;
+   line-height: 50px;
+   border-bottom: 2px solid #fcf9f9;
+   
+}
+
+.user-data:hover{
+   cursor: pointer;
+}
+
+.user-data h2 {
+   margin-left: 20px;
+}
+
+.workspace{
+   display: flex;
+   flex-wrap: nowrap;
+}
+
+.function-menu{
+   background-color: #5b97de;
+   color: aliceblue;
+   min-height: 80vh ;
+   flex-basis: 15%;
+}
+
+.function-menu ul {
+   padding: 0; /* убрать отступы списка */
+   margin: 0; /* убрать сдвиг списка */
+}
+.dropdown{
+   border-bottom: 2px solid #fcf9f9;
+   min-height: 50px;
+   position: relative;
+}
+
+.list-item {
+   height: 50px;
+   align-items: center;
+   justify-content: center;
+}
+
+
+.primary-list{
+   font-size: 24px;
+   width: 100%;
+   height: 100%;
+   background-color: #5b97de;
+   color: aliceblue;
+   border: none;
+   position: relative;
+}
+
+.primary-list:hover {
+   cursor: pointer;
+ }
+
+.dropdown:hover .list-item{
+   box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+}
+
+.collapsible-content {
+   padding: 0 18px;
+   width: 100%;
+   display: none;
+   overflow: hidden;
+   background-color: #f1f1f1;
+   position: absolute; /* добавить это */
+   top: 100%; /* позиционировать его ниже родительского элемента */
+   left: 0;
+  z-index: 1; /* добавить это, чтобы он отображался поверх других элементов */
+   }
+ 
+.collapsible-content li {
+   padding: 10px;
+   border-bottom: 1px solid #ddd;
+   
+   }
+ 
+.collapsible-content li:last-child {
+   border-bottom: none;
+   }
+
+.secondary-list{
+   font-size: 18px;
+   width: 100%;
+   height: 100%;
+   border: none;
+}

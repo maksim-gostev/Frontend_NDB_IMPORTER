@@ -5,11 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../static/img/ico-ndb.png">
     <link rel="stylesheet" href="../static/css/index_styles.css">
+    <link rel="stylesheet" href="../static/css/user_styel.css">
     <script src="../static/js/header_js.js"></script>
+    <script src="../static/js/user_js.js"></script>
     <title>Карточка пользователя</title>
 </head>
 <body>
     <div id="header"></div>
+    <div class="user-data" id="user_data">
+        <h2>Гостев Максим Владимирович</h2>
+    </div>
+    <div class="workspace" id="workspace">
+        <div class="function-menu">
+            <ul>
+                <li class="dropdown">
+                    <div class="list-item">
+                        <button class="primary-list" onclick="toggleList(this)">Открыть список</button>
+                        <ul class="collapsible-content">
+                            <li><button class="secondary-list">Элемент 1</button></li>
+                            <li><button class="secondary-list">Элемент 2</button></li>
+                            <li><button class="secondary-list">Элемент 3</button></li>
+                        </ul>
+                    </div>
+                    
+                </li>
+                <li class="dropdown">
+                    <div class="list-item">
+                        <button class="primary-list" onclick="toggleList(this)">Открыть список 2</button>
+                    <ul class="collapsible-content">
+                        <li>Элемент 1</li>
+                        <li>Элемент 2</li>
+                        <li>Элемент 3</li>
+                      </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 
 
     <script> headertHTML("header", "../static/img/logo-ndb.png")</script>
