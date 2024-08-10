@@ -1,5 +1,7 @@
-
-  function authorization(form_submit) {
+import { onSuccessAuthorization } from './jwt.js';
+  
+  
+export function authorization(form_submit) {
     // Получаем форму
     const form = document.getElementById(form_submit);
   
@@ -32,6 +34,8 @@
      .then(data => {
         // Здесь можно вызвать функцию, если авторизация прошла успешно
         onSuccessAuthorization(data);
+        transitionToUser();
+
       })
      .catch(error => {
         console.error('Ошибка:', error);
@@ -48,10 +52,7 @@
   }
   
   // Функция, которая будет вызвана в случае успешной авторизации
-  function onSuccessAuthorization(data) {
-    console.log(data)
-    localStorage.setItem('accessJwtToken', data.access_token);
-    localStorage.setItem('refreshJwtToken', data.refresh_token);
+  function transitionToUser() {
     window.location.href = "templates/user_index.html";
     // Здесь можно выполнить какие-либо действия после успешной авторизации
   }
