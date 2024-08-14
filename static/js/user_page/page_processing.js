@@ -1,5 +1,6 @@
 import {getUserData} from './user_data_js.js'
 import {getListRoles} from './roles_data_js.js'
+import {passwordChangeWindow} from './passwordChangeWindow.js'
 
 export function pageProcessing() {
     const accessJwtToken = localStorage.getItem('accessJwtToken');
@@ -11,4 +12,7 @@ export function pageProcessing() {
       }
     getUserData(headers)
     getListRoles(headers)
+    passwordChangeWindow()
 }
+
+

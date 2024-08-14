@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="../static/css/user_styel.css">
     <script src="../static/js/header_js.js"></script>
     <script src="../static/js/user_page/toggle_list.js"></script>
+    <!-- <script src="../static/js/user_page/passwordChangeWindow.js"></script> -->
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.css">
+    <script type="module" src="node_modules/sweetalert2/dist/sweetalert2.js"></script>
     <title>Карточка пользователя</title>
 </head>
 <body>
-    <div id="header"></div>
+    <header id="header"></header>
     <div class="user-data" id="user_data">
         <!-- <h2>Гостев Максим Владимирович</h2> -->
     </div>
-    <div class="workspace" id="workspace">
+    <div class="common-space" id="common-space">
         <div class="function-menu" id="function-menu">
             <ul>
                 <!--<li class="dropdown">
@@ -41,6 +44,20 @@
                 </li>-->
             </ul>
         </div>
+        <div class="workspace" id="workspace">
+            <!--<div>
+                <form id="newPasswordForm" method="post">
+                    <label for="old_password">Старый пароль</label><br>
+                    <input type="text" id="old_password" name="old_password" placeholder="Старый пароль" autofocus autocomplete="on"><br>
+                    <label for="new_password">Новый пароль</label><br>
+                    <input type="password" id="new_password" name="new_password" placeholder="Новый пароль" required><br>
+                    <label for="new_password2">Повторите пароль</label><br>
+                    <input type="password" id="new_password2" name="new_password2" placeholder="Повторите пароль" required><br>
+                    <p id="Forbiden"></p>
+                    <button type="submit">Ввод</button><br>
+                </form>
+            </div>-->
+        </div>
     </div>
 
 
@@ -50,5 +67,9 @@
         import { pageProcessing } from '../static/js/user_page/page_processing.js';
         pageProcessing();
       </script>
+    <script type="module">
+        import {updatePassword} from '../static/js/user_page/newPassword.js';
+        updatePassword("newPasswordForm");
+    </script>
 </body>
 </html>
