@@ -36,21 +36,18 @@ export function updatePassword(form_submit){
                     }
                 })
                 .then(data => {
-                    onStatus('')
-                    // Показываем всплывающее окно с уведомлением об успешном изменении пароля
-                    onSuccessAuthorization(data)
-                })
-                .catch(error => {
+                    createNotification('Пароль изменен успешно!', 'success');
+                    onSuccessAuthorization(data);
+                  })
+                  .catch(error => {
                     console.error('Ошибка:', error);
                     if (error.message.includes('401')) {
-                        // Здесь можно вызвать функцию, если произошла ошибка 404
-                        onStatus("Неверный старый пароль");
+                      createNotification('Неверный старый пароль', 'error');
                     }
                     if (error.message.includes('400')) {
-                        // Здесь можно вызвать функцию, если произошла ошибка 403
-                        onStatus("Новые пароли не совпадают")
+                      createNotification('Новые пароли не совпадают', 'error');
                     }
-                });
+                  });
             });
         } // Закрывающая скобка для if (form)
     }; // Закрывающая скобка для addSubmitHandler
@@ -71,3 +68,14 @@ export function updatePassword(form_submit){
 function onStatus(data) {
     document.getElementById("Forbiden").innerHTML = data
 }
+
+
+function createNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = message;
+    document.getElementById('notifications').appendChild(notification);
+    setTimeout(() => {
+      notification.remove();
+    }, 5000); // удалить уведомление через 5 секунд
+  }

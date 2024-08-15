@@ -27,6 +27,7 @@ export function passwordChangeWindow() {
     const workspace = document.getElementById("workspace");
     workspace.innerHTML = `
       <div>
+      <div id="notifications"></div>
         <form id="newPasswordForm" method="post">
           <label for="old_password">Старый пароль</label><br>
           <input type="text" id="old_password" name="old_password" placeholder="Старый пароль" autofocus autocomplete="on"><br>
