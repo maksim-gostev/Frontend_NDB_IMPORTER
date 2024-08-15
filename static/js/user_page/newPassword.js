@@ -1,5 +1,3 @@
-import * as Swal from '/node_modules/sweetalert2/dist/sweetalert2.js';
-
 import { onSuccessAuthorization } from '../jwt.js';
 
 export function updatePassword(form_submit){
@@ -38,13 +36,8 @@ export function updatePassword(form_submit){
                     }
                 })
                 .then(data => {
-                    on201OK('')
+                    onStatus('')
                     // Показываем всплывающее окно с уведомлением об успешном изменении пароля
-                    Swal.fire({
-                        title: 'Пароль успешно изменен!',
-                        icon: 'success',
-                        confirmButtonText: 'OK'
-                      });
                     onSuccessAuthorization(data)
                 })
                 .catch(error => {
